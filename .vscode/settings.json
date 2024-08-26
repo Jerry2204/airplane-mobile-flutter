@@ -1,3 +1,4 @@
 {
-    "cmake.sourceDirectory": "D:/Project/airplane/linux"
+    "cmake.sourceDirectory": "D:/Project/airplane/linux",
+    "cmake.ignoreCMakeListsMissing": true
 }

@@ -72,7 +72,7 @@ class GetStartedPage extends StatelessWidget {
                       ),
                     ),
                   ),
-                )
+                ),
               ],
             ),
           ),
