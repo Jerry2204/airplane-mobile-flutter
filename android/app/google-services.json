@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1028193559108",
+    "project_id": "airplane-booking-d17b5",
+    "storage_bucket": "airplane-booking-d17b5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1028193559108:android:9159bb1b4ddc50e2f2d211",
+        "android_client_info": {
+          "package_name": "com.jerrypunkrib.airplane"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCF6VbGxvqu_Dnb9odvJxf0y87WghXN0R0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

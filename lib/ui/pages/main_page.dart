@@ -26,17 +26,17 @@ class MainPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               CustomBottomNavigationItem(
-                imageUrl: 'assets/icon_home.png',
+                iconName: Icons.home,
                 isSelected: true,
               ),
               CustomBottomNavigationItem(
-                imageUrl: 'assets/icon_booking.png',
+                iconName: Icons.location_city,
               ),
               CustomBottomNavigationItem(
-                imageUrl: 'assets/icon_card.png',
+                iconName: Icons.settings,
               ),
               CustomBottomNavigationItem(
-                imageUrl: 'assets/icon_setting.png',
+                iconName: Icons.dangerous,
               ),
             ],
           ),

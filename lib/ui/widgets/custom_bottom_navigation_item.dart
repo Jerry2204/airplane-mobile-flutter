@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import '../../shared/theme.dart';
 
 class CustomBottomNavigationItem extends StatelessWidget {
-  final String imageUrl;
   final bool isSelected;
+  final IconData iconName;
 
   const CustomBottomNavigationItem({
     super.key,
-    required this.imageUrl,
+    required this.iconName,
     this.isSelected = false,
   });
 
@@ -20,10 +20,9 @@ class CustomBottomNavigationItem extends StatelessWidget {
         Container(
           width: 24,
           height: 24,
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage(imageUrl),
-            ),
+          child: Icon(
+            iconName,
+            color: isSelected ? kPrimaryColor : kGrayColor,
           ),
         ),
         Container(
