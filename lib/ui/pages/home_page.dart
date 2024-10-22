@@ -110,8 +110,10 @@ class HomePage extends StatelessWidget {
           top: 30,
           left: defaultMargin,
           right: defaultMargin,
+          bottom: 110,
         ),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
               'New This Year',
@@ -120,7 +122,30 @@ class HomePage extends StatelessWidget {
                 fontWeight: semiBold,
               ),
             ),
-            DestinationTile(),
+            DestinationTile(
+              imageUrl: 'assets/image_destination6.png',
+              title: 'Danau Beratan',
+              city: 'Singajara',
+              rating: 4.3,
+            ),
+            DestinationTile(
+              imageUrl: 'assets/image_destination7.png',
+              title: 'Sidney Opera',
+              city: 'Australia',
+              rating: 5.0,
+            ),
+            DestinationTile(
+              imageUrl: 'assets/image_destination8.png',
+              title: 'Roma',
+              city: 'Italy',
+              rating: 4.8,
+            ),
+            DestinationTile(
+              imageUrl: 'assets/image_destination8.png',
+              title: 'Roma',
+              city: 'Italy',
+              rating: 4.8,
+            ),
           ],
         ),
       );

@@ -2,7 +2,18 @@ import 'package:airplane/shared/theme.dart';
 import 'package:flutter/material.dart';
 
 class DestinationTile extends StatelessWidget {
-  const DestinationTile({super.key});
+  final String imageUrl;
+  final String title;
+  final String city;
+  final double rating;
+
+  const DestinationTile({
+    super.key,
+    required this.imageUrl,
+    required this.title,
+    required this.city,
+    this.rating = 0.0,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +45,7 @@ class DestinationTile extends StatelessWidget {
               image: DecorationImage(
                 fit: BoxFit.cover,
                 image: AssetImage(
-                  'assets/image_destination6.png',
+                  imageUrl,
                 ),
               ),
             ),
@@ -44,7 +55,7 @@ class DestinationTile extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Danau Beratan',
+                  title,
                   style: blackTextStyle.copyWith(
                     fontSize: 18,
                     fontWeight: medium,
@@ -54,7 +65,7 @@ class DestinationTile extends StatelessWidget {
                   height: 5,
                 ),
                 Text(
-                  'Singajara',
+                  city,
                   style: grayTextStyle.copyWith(
                     fontWeight: light,
                   ),
@@ -81,7 +92,7 @@ class DestinationTile extends StatelessWidget {
                 ),
               ),
               Text(
-                '4.5',
+                rating.toString(),
                 style: blackTextStyle.copyWith(
                   fontWeight: medium,
                 ),
