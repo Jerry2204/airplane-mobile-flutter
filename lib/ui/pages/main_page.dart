@@ -1,6 +1,11 @@
+import 'package:airplane/cubit/page_cubit.dart';
 import 'package:airplane/ui/pages/home_page.dart';
+import 'package:airplane/ui/pages/setting_page.dart';
+import 'package:airplane/ui/pages/transaction_page.dart';
+import 'package:airplane/ui/pages/wallet_page.dart';
 import 'package:airplane/ui/widgets/custom_bottom_navigation_item.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../shared/theme.dart';
 
 class MainPage extends StatelessWidget {
@@ -8,8 +13,19 @@ class MainPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Widget buildContent() {
-      return HomePage();
+    Widget buildContent(int currentIndex) {
+      switch (currentIndex) {
+        case 0:
+          return HomePage();
+        case 1:
+          return TransactionPage();
+        case 2:
+          return WalletPage();
+        case 3:
+          return SettingPage();
+        default:
+          return HomePage();
+      }
     }
 
     Widget customButtonNavigation() {
@@ -31,17 +47,20 @@ class MainPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               CustomBottomNavigationItem(
+                index: 0,
                 iconName: Icons.home,
-                isSelected: true,
               ),
               CustomBottomNavigationItem(
-                iconName: Icons.location_city,
+                index: 1,
+                iconName: Icons.book,
               ),
               CustomBottomNavigationItem(
+                index: 2,
+                iconName: Icons.wallet,
+              ),
+              CustomBottomNavigationItem(
+                index: 3,
                 iconName: Icons.settings,
-              ),
-              CustomBottomNavigationItem(
-                iconName: Icons.dangerous,
               ),
             ],
           ),
@@ -49,14 +68,18 @@ class MainPage extends StatelessWidget {
       );
     }
 
-    return Scaffold(
-      backgroundColor: kBackgroundColor,
-      body: Stack(
-        children: [
-          buildContent(),
-          customButtonNavigation(),
-        ],
-      ),
+    return BlocBuilder<PageCubit, int>(
+      builder: (context, currentIndex) {
+        return Scaffold(
+          backgroundColor: kBackgroundColor,
+          body: Stack(
+            children: [
+              buildContent(currentIndex),
+              customButtonNavigation(),
+            ],
+          ),
+        );
+      },
     );
   }
 }
