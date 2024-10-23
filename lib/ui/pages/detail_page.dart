@@ -1,4 +1,6 @@
 import 'package:airplane/shared/theme.dart';
+import 'package:airplane/ui/widgets/custom_button.dart';
+import 'package:airplane/ui/widgets/interest_item.dart';
 import 'package:airplane/ui/widgets/photo_item.dart';
 import 'package:flutter/material.dart';
 
@@ -161,11 +163,10 @@ class DetailPage extends StatelessWidget {
                       height: 2,
                     ),
                   ),
+                  // NOTE: PHOTOS
                   SizedBox(
                     height: 20,
                   ),
-
-                  // NOTE: PHOTOS
                   Text(
                     'Photos',
                     style: blackTextStyle.copyWith(
@@ -189,9 +190,89 @@ class DetailPage extends StatelessWidget {
                       ),
                     ],
                   ),
+                  // NOTE: PHOTOS
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Text(
+                    'Interests',
+                    style: blackTextStyle.copyWith(
+                      fontSize: 16,
+                      fontWeight: semiBold,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 6,
+                  ),
+                  Row(
+                    children: [
+                      InterestItem(
+                        text: 'Kids Park',
+                      ),
+                      InterestItem(
+                        text: 'Honor Bridge',
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Row(
+                    children: [
+                      InterestItem(
+                        text: 'City Museum',
+                      ),
+                      InterestItem(
+                        text: 'Central Mall',
+                      ),
+                    ],
+                  ),
                 ],
               ),
-            )
+            ),
+
+            // NOTE: PRICE AND BOOK BUTTON
+            Container(
+              width: double.infinity,
+              margin: EdgeInsets.symmetric(
+                vertical: 30,
+              ),
+              child: Row(
+                children: [
+                  // NOTE: PRICE
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'IDR 2.500.000',
+                          style: blackTextStyle.copyWith(
+                            fontSize: 18,
+                            fontWeight: medium,
+                          ),
+                        ),
+                        SizedBox(
+                          height: 5,
+                        ),
+                        Text(
+                          'per orang',
+                          style: grayTextStyle.copyWith(
+                            fontWeight: light,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+
+                  // NOTE: BOOK BUTTON
+                  CustomButton(
+                    title: 'Book Now',
+                    onPressed: () {},
+                    width: 170,
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       );
@@ -199,12 +280,14 @@ class DetailPage extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: kBackgroundColor,
-      body: Stack(
-        children: [
-          backgroundImage(),
-          customShadow(),
-          content(),
-        ],
+      body: SingleChildScrollView(
+        child: Stack(
+          children: [
+            backgroundImage(),
+            customShadow(),
+            content(),
+          ],
+        ),
       ),
     );
   }
