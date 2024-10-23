@@ -36,6 +36,9 @@ class CustomTextFormField extends StatelessWidget {
             obscureText: obsecureText,
             decoration: InputDecoration(
               hintText: hintText,
+              hintStyle: grayTextStyle.copyWith(
+                fontSize: 12,
+              ),
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(
                   defaultRadius,
