@@ -73,6 +73,9 @@ class SignUpPage extends StatelessWidget {
           } else if (state is AuthFailed) {
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(
+                duration: Duration(
+                  milliseconds: 700,
+                ),
                 backgroundColor: kRedColor,
                 content: Text(state.error),
               ),
