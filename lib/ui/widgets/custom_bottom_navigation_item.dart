@@ -1,5 +1,4 @@
 import 'package:airplane/cubit/page_cubit.dart';
-import 'package:airplane/main.dart';
 import 'package:flutter/material.dart';
 import '../../shared/theme.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -23,7 +22,7 @@ class CustomBottomNavigationItem extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          SizedBox(),
+          const SizedBox(),
           Container(
             width: 24,
             height: 24,
